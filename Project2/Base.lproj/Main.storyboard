@@ -15,23 +15,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbC-kw-m9z">
-                                <rect key="frame" x="107" y="100" width="200" height="100"/>
-                                <state key="normal" image="us"/>
+                            <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbC-kw-m9z">
+                                <rect key="frame" x="57" y="115" width="300" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="oXF-rL-5K5"/>
+                                    <constraint firstAttribute="height" constant="210" id="rSj-Wd-WhX"/>
+                                </constraints>
+                                <state key="normal" image="ci"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9GI-9K-LB7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLM-ct-pTP">
-                                <rect key="frame" x="107" y="230" width="200" height="100"/>
-                                <state key="normal" image="us"/>
+                            <button opaque="NO" tag="1" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLM-ct-pTP">
+                                <rect key="frame" x="57" y="343" width="300" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="kfK-Tm-05d"/>
+                                    <constraint firstAttribute="width" constant="300" id="tHQ-IW-cR8"/>
+                                </constraints>
+                                <state key="normal" image="np"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zog-lq-tAy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCf-sv-Z7G">
-                                <rect key="frame" x="107" y="360" width="200" height="100"/>
-                                <state key="normal" image="us"/>
+                            <button opaque="NO" tag="2" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCf-sv-Z7G">
+                                <rect key="frame" x="57" y="571" width="300" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="G7l-wa-YBt"/>
+                                    <constraint firstAttribute="height" constant="210" id="cnd-VE-NmK"/>
+                                </constraints>
+                                <state key="normal" image="aw"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XOD-Nc-nDo"/>
                                 </connections>
@@ -39,12 +51,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="gLM-ct-pTP" firstAttribute="centerX" secondItem="MbC-kw-m9z" secondAttribute="centerX" id="1by-iU-ngA"/>
-                            <constraint firstItem="uCf-sv-Z7G" firstAttribute="top" secondItem="gLM-ct-pTP" secondAttribute="bottom" constant="30" id="GIU-f0-KJV"/>
-                            <constraint firstItem="uCf-sv-Z7G" firstAttribute="centerX" secondItem="gLM-ct-pTP" secondAttribute="centerX" id="Hph-2G-4Yy"/>
-                            <constraint firstItem="gLM-ct-pTP" firstAttribute="top" secondItem="MbC-kw-m9z" secondAttribute="bottom" constant="30" id="I7L-aS-NVj"/>
-                            <constraint firstItem="MbC-kw-m9z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="QAR-7Y-Zc6"/>
-                            <constraint firstItem="MbC-kw-m9z" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ycQ-Eb-dfQ"/>
+                            <constraint firstItem="gLM-ct-pTP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5a8-PK-XeP"/>
+                            <constraint firstItem="gLM-ct-pTP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-27" id="dQ1-Xg-98m"/>
+                            <constraint firstItem="MbC-kw-m9z" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="q1c-Tt-dTl"/>
+                            <constraint firstItem="gLM-ct-pTP" firstAttribute="top" secondItem="MbC-kw-m9z" secondAttribute="bottom" constant="18" id="z95-JE-bxZ"/>
+                            <constraint firstItem="uCf-sv-Z7G" firstAttribute="top" secondItem="gLM-ct-pTP" secondAttribute="bottom" constant="18" id="zos-3s-ytf"/>
+                            <constraint firstItem="uCf-sv-Z7G" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zxa-JB-Pwk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -64,7 +76,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vaS-gQ-LH5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cXY-7O-VS6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="cXY-7O-VS6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -79,6 +91,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="us" width="200" height="100"/>
+        <image name="aw" width="200" height="133.5"/>
+        <image name="ci" width="200" height="133.5"/>
+        <image name="np" width="200" height="244"/>
     </resources>
 </document>

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var button3: UIButton!
     @IBOutlet var scoreButton: UIBarButtonItem!
     
-    var countries = [String]()
+    var countries = [IsoCountryInfo]()
     var score = 0
     var correctAnswer = 0
     var questionNumber = 1
@@ -31,8 +31,9 @@ class ViewController: UIViewController {
     // MARK: - Functions
     
     func setupCountries() {
-        
-        countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
+
+//        countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
+        countries += IsoCountries().allCountries
     }
     
     func askQuestion(action: UIAlertAction! = nil) {
@@ -44,12 +45,12 @@ class ViewController: UIViewController {
         countries.shuffle()
         
         // set title to correct answer
-        self.title = countries[correctAnswer].uppercased()
+        self.title = countries[correctAnswer].name.uppercased()
         
         // select the first three images from the array
-        button1.setImage(UIImage(named: countries[0]), for: .normal)
-        button2.setImage(UIImage(named: countries[1]), for: .normal)
-        button3.setImage(UIImage(named: countries[2]), for: .normal)
+        button1.setImage(UIImage(named: countries[0].code.lowercased()), for: .normal)
+        button2.setImage(UIImage(named: countries[1].code.lowercased()), for: .normal)
+        button3.setImage(UIImage(named: countries[2].code.lowercased()), for: .normal)
     }
     
     func newGame(action: UIAlertAction! = nil) {
@@ -69,7 +70,7 @@ class ViewController: UIViewController {
             title = "Correct"
             score += 1
         } else {
-            title = "Wrong!\nThat's the flag of \(countries[sender.tag].capitalized)."
+            title = "Wrong!\nThat's the flag of \(countries[sender.tag].name.capitalized)."
             score -= 1
         }
         
@@ -89,14 +90,16 @@ class ViewController: UIViewController {
     func setupUI() {
         
         // add 1 point border around each button
-        button1.layer.borderWidth = 1
-        button2.layer.borderWidth = 1
-        button3.layer.borderWidth = 1
+//        button1.layer.borderWidth = 0.25
+//        button2.layer.borderWidth = 0.25
+//        button3.layer.borderWidth = 0.25
+//        
+//        // set border color to light gray
+//        button1.layer.borderColor = UIColor.lightGray.cgColor
+//        button2.layer.borderColor = UIColor.lightGray.cgColor
+//        button3.layer.borderColor = UIColor.lightGray.cgColor
         
-        // set border color to light gray
-        button1.layer.borderColor = UIColor.lightGray.cgColor
-        button2.layer.borderColor = UIColor.lightGray.cgColor
-        button3.layer.borderColor = UIColor.lightGray.cgColor
+        self.view.layer.backgroundColor = UIColor.darkGray.cgColor
     }
 
 }
