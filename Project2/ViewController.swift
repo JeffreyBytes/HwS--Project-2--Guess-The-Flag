@@ -13,10 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!
     @IBOutlet var button3: UIButton!
+    @IBOutlet var scoreButton: UIBarButtonItem!
     
     var countries = [String]()
     var score = 0
     var correctAnswer = 0
+    var questionNumber = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,21 +52,36 @@ class ViewController: UIViewController {
         button3.setImage(UIImage(named: countries[2]), for: .normal)
     }
     
+    func newGame(action: UIAlertAction! = nil) {
+        
+        score = 0
+        questionNumber = 1
+        askQuestion()
+    }
+    
     @IBAction func buttonTapped(_ sender: UIButton) {
         
         var title: String
+        
+        questionNumber += 1
         
         if sender.tag == correctAnswer {
             title = "Correct"
             score += 1
         } else {
-            title = "Wrong"
+            title = "Wrong!\nThat's the flag of \(countries[sender.tag].capitalized)."
             score -= 1
         }
         
-        let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
-        present(ac, animated: true)
+        if questionNumber <= 10 {
+            let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Final Score", message: "You completed 10 rounds, your final score is \(score).", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "New Game", style: .default, handler: newGame))
+            present(ac, animated: true)
+        }
     }
     
     // MARK: - UI Functions
